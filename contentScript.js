@@ -1,9 +1,8 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "startWordle") {
     const play = setInterval(function () {
-      const playButton = document.getElementsByClassName("Welcome-module_button__ZG0Zh");
-      console.log(playButton[2]);
-      playButton[2].click();
+      const playButton = document.querySelector('button[data-testid="Play"]');
+      playButton.click();
       console.log("done");
 
       // setTimeout required because button takes a second or two to load
